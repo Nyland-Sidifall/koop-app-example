@@ -1,3 +1,6 @@
 {
-  "port": "8080"
+  "port": 8080,
+  "db": {
+    "postgis": "postgres://@localhost:6969/postgres"
+  }
 }

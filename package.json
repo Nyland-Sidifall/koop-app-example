@@ -1,49 +1,28 @@
 {
-  "name": "koop-app-example",
-  "description": "Sample koop express application with some common koop providers.",
+  "name": "dev-demo",
   "version": "0.1.0",
-  "author": "Esri R&D",
-  "bugs": {
-    "url": "https://github.com/koopjs/koop-app-example/issues"
+  "description": "A project template for Koop",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha 'test/**/*.test.js'",
+    "start": "node src/index.js"
   },
   "dependencies": {
-    "@koopjs/provider-github": "^3.0.0",
-    "config": "^3.2.5",
-    "koop": "^3.17.0",
-    "koop-provider-craigslist": "^2.0.1"
+    "@koopjs/koop-core": "^9.1.1",
+    "btoa": "^1.2.1",
+    "config": "^3.3.9",
+    "koop-provider-pg": "^1.0.7",
+    "koop-provider-postgis": "github:brambow/koop-provider-postgis"
   },
   "devDependencies": {
-    "@koopjs/cli": "^0.6.0",
-    "standard": "^14.3.1",
-    "tap-spec": "^5.0.0",
-    "tape": "^5.0.0"
+    "@koopjs/cli": "^1.1.7",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
   },
-  "homepage": "https://github.com/koopjs/koop-app-example",
-  "keywords": [
-    "agol",
-    "arcgis",
-    "etl",
-    "example",
-    "geojson",
-    "gis",
-    "gist",
-    "github",
-    "heroku",
-    "koop",
-    "postgres",
-    "sample",
-    "socrata"
-  ],
-  "license": "Apache-2.0",
-  "main": "src/index.js",
+  "repository": "",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com:koopjs/koop-app-example.git"
-  },
-  "scripts": {
-    "start": "node src/index.js",
-    "start:dev": "koop serve --save --watch",
-    "test": "standard && tape test/*.js | tap-spec"
-  }
+  "keywords": [
+    "koop",
+    "app"
+  ]
 }

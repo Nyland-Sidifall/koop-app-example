@@ -1,9 +1,9 @@
-const welcome = require('./request-handlers/welcome')
+const welcomePage = require('./request-handlers/welcome-page')
 
 module.exports = [
   {
     path: '/',
     methods: ['get'],
-    handler: welcome
+    handler: welcomePage
   }
 ]

@@ -1,62 +1,37 @@
+# koop-cli-new-project
 
-# Koop Sample App
-[![Build Status](https://travis-ci.org/koopjs/koop-app-example.svg?branch=master)](https://travis-ci.org/koopjs/koop-app-example)
-[![Greenkeeper badge](https://badges.greenkeeper.io/koopjs/koop-app-example.svg)](https://greenkeeper.io/)
+A minimal Koop project template from [Koop CLI](https://github.com/koopjs/koop-cli).
 
-A sample [Koop](https://github.com/koopjs/koop) application with some common [providers](https://koopjs.github.io/docs/providers).
+See the [specification](https://koopjs.github.io/docs/usage/koop-core) for more details.
 
-This app makes it easy to get started running your own instance of Koop. It's also helpful for trying out Koop's functionality and testing providers, caches, plugins, and deployments.
+## Configuration
 
-If you're new to [Node.js](https://nodejs.org/) development, you can read more about [setting up a development environment](https://koopjs.github.io/docs/setup).
+### App Configuration
 
-## Instructions
+The Koop application is configured with the [config](https://www.npmjs.com/package/config) package. By default the configurations are stored as JSON files in the `config` folder. It is recommended to namespace the configuration for plugins in order to avoid any potential key conflict.
 
-Clone this repository on your machine.
+### Koop Configuration
 
-```
-git clone git@github.com:koopjs/koop-app-example.git
-```
+The Koop project configuration `koop.json` is the configuration for the app/plugin code. It is part of the code and used to store internal properties of the app/plugin. It should not be changed with the deployment.
 
-Change the working directory to the newly created `koop-app-example` folder.
+## Development
 
-```
-cd koop-app-example
-```
+### Testing
 
-Install dependencies.
+This project uses [mocha](https://www.npmjs.com/package/mocha) as the testing framework and [chaijs](https://www.chaijs.com/) as the assertion library. All test files in the `test` directory should have the special extension `.test.js`, which will be executed by the command:
 
 ```
-npm install
+$ npm test
 ```
 
-Start the server.
+### Dev Server
+
+This project by default uses the [Koop CLI](https://github.com/koopjs/koop-cli) to set up the dev server. It can be invoked via
 
 ```
-npm start
+$ npm start
 ```
 
-Take Koop for a test drive!
+The server will be running at `http://localhost:8080` or at the port specified at the configuration.
 
-This sample app includes the following providers:
-
-* [`github`](https://github.com/koopjs/koop-provider-github)
-* [`craigslist`](https://github.com/dmfenton/koop-provider-craigslist)
-
-Once Koop is running, you can test these sample requests:
-
-* [http://localhost:8080/github/koopjs::geodata::north-america/FeatureServer/0/query](http://localhost:8080/github/koopjs::geodata::north-america/FeatureServer/0/query)
-* [http://localhost:8080/craigslist/seattle/apartments/FeatureServer/0/query](http://localhost:8080/craigslist/seattle/apartments/FeatureServer/0/query)
-
-## Resources
-
-* [Koop](https://github.com/koopjs/koop)
-* [Koop Documentation](https://koopjs.github.io/docs)
-* [PostgreSQL](http://www.postgresql.org/)
-* [PostGIS](http://postgis.net/)
-* [ArcGIS for Developers](http://developers.arcgis.com)
-* [ArcGIS REST API Documentation](http://resources.arcgis.com/en/help/arcgis-rest-api/)
-* [@esri](http://twitter.com/esri)
-
-## License
-
-[Apache 2.0](LICENSE)
+For more details, check the [Koop CLI documentation](https://github.com/koopjs/koop-cli/blob/master/README.md).
